@@ -7,3 +7,6 @@ Check validity of VAT numbers against EU VIES
 1. install ```sudo apt install python3-suds```
 1. install ```sudo apt install python3-pysimplesoap```
 
+# example tsv file
+NL12345678  100
+BE12345678  200
