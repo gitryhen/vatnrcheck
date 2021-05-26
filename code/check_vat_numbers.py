@@ -3,7 +3,7 @@ import datetime
 import numpy as np
 
 vatnumbers = []
-with open('./202102/av.tsv', mode='r') as f:
+with open('/home/henry/Documents/DeltaMask/2021/202104/idb_agg.tsv', mode='r') as f:
     for line in f:
         vatnumbers.append(line.split(None, 1)[0])
 
@@ -40,7 +40,9 @@ for vatnumber in vatnumbers:
             else:
                 responses[vatnumber]=check_vies(validate(vatnumber), timeout=30)
                 print(vatnumber, 'Returned result', sep=' ')
-        except:
+        except ModuleNotFoundError:
+            print('Check installation, module not found')
+        except IndexError:
             print(vatnumber, 'Failed', sep=' ')
         # input("wait for keypress...")
 
